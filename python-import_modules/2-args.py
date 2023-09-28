@@ -4,20 +4,11 @@ import sys
 args = sys.argv[1:]
 num_args = len(args)
 
+print("Número de argumento(s):", num_args, end="")
 if num_args == 0:
-    print('Usage: ./03-args.py <number>')
-    sys.exit(1)
+    print(".", end="")
+print("\n")
 
-num = int(args[0])
-
-if num < 0:
-
-    print('Negative')
-elif num == 0:
-    print('Zero')
-elif num > 0:
-    print('Positive')
-else:
-    print('Error')
-
-print('Done.')
+if num_args > 0:
+    for i, arg in enumerate(args, start=1):
+        print("Argumento", i, ":", arg)
