@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""This module contains a square class"""
+"""Module contains square class"""
 
 
 class Square:
-    """This class defines a square"""
+    """Class defines square"""
 
     def __init__(self, size=0):
         """initializes the data"""
