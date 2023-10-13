@@ -1,37 +1,33 @@
 #!/usr/bin/python3
-"""
-Matrix Manipulation
-"""
+"""This module contains a function that divide a mtrix"""
+
 
 def matrix_divided(matrix, div):
-    """Divide all elements of the matrix
-    Parameters:
-    matrix = matrix
-    div = integer dividing elements
-
-    Local Args:
-    new = list of lists
-    array = lists with new elements
     """
+    This function divide a matrix by the
+    number number passed to us
 
-    if not isinstance(div, (int, float)):
+    matrix = matrix to be divided
+    div = number to be divided from
+    """
+    msg_error = "matrix must be a matrix (list of lists) of integers/floats"
+    if type(matrix) is not list:
+        raise TypeError(msg_error)
+
+    if type(div) not in [int, float]:
         raise TypeError('div must be a number')
-    if not div:
+
+    if div == 0:
         raise ZeroDivisionError('division by zero')
 
-    new = []
-    array = []
     for row in matrix:
-        if len(row) != len(matrix[0]):
+        for value in row:
+            if type(value) not in [int, float]:
+                raise TypeError(msg_error)
+
+    first_row = len(matrix[0])
+    for row in matrix:
+        if first_row != len(row):
             raise TypeError('Each row of the matrix must have the same size')
-        if not all(row) and all(matrix[row]) is False:
-            raise TypeError(
-                'matrix must be a matrix (list of lists) of integers/floats')
-        for num in row:
-            if isinstance(num, (int, float)) is False:
-                raise TypeError(
-                    'matrix must be a matrix (list of lists) of integers/floats')
-            array.append(round(num / div, 2))
-        new.append(array)
-        array = []
-    return new
+
+    return [[round(i / div, 2) for i in row] for row in matrix]
