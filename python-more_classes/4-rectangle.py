@@ -12,7 +12,6 @@ class Rectangle:
         Attribute:
             width (int): Private
             height (int) : Private
-
         """
     def __init__(self, width=0, height=0):
         """
