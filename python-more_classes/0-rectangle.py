@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-"""Module that defines a rectangle"""
+"""0-rectangle, built for Holberton project 0x08 task 0.
+"""
 
 
 class Rectangle:
-    """This is a class that can define a rectangle, but it's empty for now."""
-    pass  # This means there's nothing inside
+    """Empty class per task instructions, will be built upon in later tasks.
+    """
+    pass
