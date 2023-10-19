@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 """
-Module geometry.
+BaseGeometry Module
 """
 
 class BaseGeometry():
-    """Empty class"
+    """Empty class"""
     pass
