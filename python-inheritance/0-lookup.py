@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Define an lookup funtion."""
+
+"""Module lookup funtion."""
 
 
 def lookup(obj):
