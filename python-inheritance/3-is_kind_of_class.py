@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-"""Module kind of class."""
+"""
+Module kind of class.
+"""
 
 
 def is_kind_of_class(obj, a_class):
