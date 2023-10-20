@@ -1,23 +1,23 @@
 #!/usr/bin/python3
-"""Rectangle class inherited from BaseGeometry class"""
+""" This module have class called Rectangle that inherits from BaseGeometry"""
 
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Rectangle class inherited from BaseGeometry class"""
+    """Class Rectangle that inherits from BaseGeometry"""
     def __init__(self, width, height):
-        """Rectangle class inherited from BaseGeometry class"""
+        """ Function that validates the weight & height """
         self.__width = width
         self.__height = height
         super().integer_validator("width", width)
         super().integer_validator("height", height)
 
     def area(self):
-        """Rectangle class inherited from BaseGeometry class"""
+        """Returns the area """
         return self.__width * self.__height
 
     def __str__(self):
-        """Rectangle class inherited from BaseGeometry class"""
+        """Returns the following rectangle description"""
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
