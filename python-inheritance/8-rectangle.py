@@ -1,24 +1,20 @@
 #!/usr/bin/python3
 """
-Module __init__
-"""
+module class called Rectangle"""
 
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
-"""
-Class BaseGeometry
-"""
 
 
 class Rectangle(BaseGeometry):
     """
-    Class Rectangle
+    Rectangle is a child class from BaseGeometry
     """
     def __init__(self, width, height):
         """
-        initializes values
+        Function that validates weight & height
         """
-        self.integer_validator("width", width)
         self.__width = width
-        self.integer_validator("height", height)
         self.__height = height
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
