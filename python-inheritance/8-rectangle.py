@@ -1,19 +1,14 @@
 #!/usr/bin/python3
-"""
-module class called Rectangle"""
+""" This module have class called Rectangle that inherits from BaseGeometry"""
 
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """
-    Rectangle is a child class from BaseGeometry
-    """
+    """Class Rectangle that inherits from BaseGeometry"""
     def __init__(self, width, height):
-        """
-        Function that validates weight & height
-        """
+        """ Function that validates the weight & height """
         self.__width = width
         self.__height = height
         super().integer_validator("width", width)
