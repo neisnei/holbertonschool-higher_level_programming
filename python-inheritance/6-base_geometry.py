@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-
 """
-BaseGeometry module
+area module
 """
 
-class BaseGeometry():
-    """class BaseGeometry"""
+
+class BaseGeometry:
+    """
+    Class BaseGeometry
+    """
     def area(self):
-        """Public instance method"""
+        """
+        Raises exception
+        """
         raise Exception("area() is not implemented")
