@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+
+"""
+write file module.
+"""
+
+
 """Write a function that writes a string to a text file"""
 
 
