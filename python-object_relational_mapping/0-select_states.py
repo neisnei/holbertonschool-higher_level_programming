@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 This module is about the lists all states
 from database htbtn_0e_0_usa.
@@ -22,7 +23,3 @@ if __name__ == "__main__":
 
     for row in rows:
         print(row)
-
-    # Close cursor and database connection
-    cursor.close()
-    db.close()
