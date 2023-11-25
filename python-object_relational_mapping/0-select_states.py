@@ -5,34 +5,30 @@ from database htbtn_0e_0_usa.
 """
 
 import MySQLdb
+import sys
 
-def main():
-    # Get the username, password and database name from the command line arguments
+if __name__ == "__main__":
+    # Get MySQL username, password, and database name from command line arguments
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
 
-    # Connect to the MySQL server
-    connection = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+    # Connect to MySQL server running on localhost at port 3306
+    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
 
-    # Create a cursor object
-    cursor = connection.cursor()
+    # Create a cursor object to interact with the database
+    cursor = db.cursor()
 
-    # Get all the states from the database
+    # Execute the SQL query to select all states from the states table
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
-    # Get the results
-    results = cursor.fetchall()
+    # Fetch all the rows returned by the query
+    rows = cursor.fetchall()
 
-    # Print the results
-    for row in results:
+    # Display the results
+    for row in rows:
         print(row)
 
-    # Close the cursor
+    # Close the cursor and database connection
     cursor.close()
-
-    # Close the connection
-    connection.close()
-
-if __name__ == "__main__":
-    main()
+    db.close()
