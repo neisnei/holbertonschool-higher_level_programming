@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This module is about the lists all states
+from database htbtn_0e_0_usa.
+"""
 
 import MySQLdb
 
