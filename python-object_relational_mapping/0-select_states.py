@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 
 """
-This module is about the lists all states
+This module is the lists all states
 from database htbtn_0e_0_usa.
 """
 
 import MySQLdb
-import sys import argv
+from sys import argv
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     """
     Acess database and get states
     from database
@@ -18,7 +18,7 @@ if __name__ == "__main__":
             user=argv[1], passwd=argv[2], db=argv[3])
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states BY id ASC")
     rows = cursor.fetchall()
 
     for row in rows:
