@@ -1,19 +1,14 @@
 #!/usr/bin/python3
 
 """
-all states module
-from database htbtn_0e_0_usa.
+states module
+from database.
 """
 
 import MySQLdb
 import sys
 
 if __name__ == '__main__':
-    """
-    Acess database and get states
-    from database
-    """
-
     db = MySQLdb.connect(
             host='localhost',
             port=3306,
@@ -21,7 +16,6 @@ if __name__ == '__main__':
             passwd=sys.argv[2],
             db=sys.argv[3]
             )
-
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states BY id ASC")
     states = cur.fetchall()
