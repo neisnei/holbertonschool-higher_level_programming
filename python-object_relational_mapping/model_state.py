@@ -13,7 +13,9 @@ Base = declarative_base()
 
 class state(Base):
     """
-    Defining state class mapped to cities table in database hbtn_0e_14_usa.
+    Defining state class mapped to
+    cities table in database hbtn_0e_14_usa.
+    """
 
     Attributes:
         __tablename__: Name of table mapped to State class.
