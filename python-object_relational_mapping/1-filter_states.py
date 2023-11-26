@@ -1,20 +1,33 @@
 #!/usr/bin/python3
 """
-lists states with a name starting with N
-from the database
+list all states with a name that starts with a
+upper character from database
 """
-import MySQLdb
-from sys import argv
 
+
+import MySQLdb
+import sys
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user=argv[1], passwd=argv[2], db=argv[3])
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY states.id")
-    rows = cur.fetchall()
-    for row in rows:
+
+    cnx = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        charset="utf8",
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        database=sys.argv[3])
+
+    cur = cnx.cursor()
+
+    cur.execute(
+
+    query_rows = cur.fetchall()
+
+    for row in query_rows:
         if row[1][0] == 'N':
             print(row)
+
     cur.close()
-    db.close()
+
+    cnx.close()
