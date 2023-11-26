@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-list all states with a name that starts with a
+Module list all states with a name that starts with a
 upper character from database
 """
 
