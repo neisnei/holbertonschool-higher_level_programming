@@ -3,24 +3,19 @@
 Module define the State class.
 """
 
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-# Creating declarative_base instance called Base.
 Base = declarative_base()
 
 
-class state(Base):
-    """
-    Defining state class mapped to
-    cities table in database hbtn_0e_14_usa.
+class State(Base):
+    """Represents a state for a MySQL database.
 
-        __tablename__: Name of table mapped to State class.
-        id: Column representing primary key.
-        name: Column representing name.
-        state_id: Column representing foreign key to states table.
-        """
-    __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, nullable=False)
+    __tablename__ (str): The name of the MySQL table to store States.
+    id (sqlalchemy.Integer): The state's id.
+    name (sqlalchemy.String): The state's name.
+    """
+    __tablename__ = "states"
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
