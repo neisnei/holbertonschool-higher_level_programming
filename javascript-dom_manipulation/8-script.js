@@ -1,9 +1,8 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-  fetch('https://hellosalut.stefanbohacek.dev/?lang=fr')
-    .then(response => response.json())
-    .then(data => {
-      const div = document.getElementById('hello');
-      div.textContent = data.hello;
-    })
-    .catch(error => console.error('Error:', error));
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('https://hellosalut.stefanbohacek.dev/?lang=fr')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('hello').innerText = data.hello;
+        })
+        .catch(error => console.error('Error al obtener la traducción:', error));
 });
