@@ -1,13 +1,9 @@
-// Script that fetches and displays hello from given url in #hello
-
-const url = 'https://hellosalut.stefanbohacek.dev/?lang=fr';
-
-fetch(url)
-  .then(res => {
-    if (!res.ok) throw new Error(res.status);
-    return res.json();
-  })
-  .then(data => {
-    const helloElement = document.getElementById('hello');
-    helloElement.innerHTML();
-  });
+document.addEventListener('DOMContentLoaded', (event) => {
+  fetch('https://hellosalut.stefanbohacek.dev/?lang=fr')
+    .then(response => response.json())
+    .then(data => {
+      const div = document.getElementById('hello');
+      div.textContent = data.hello;
+    })
+    .catch(error => console.error('Error:', error));
+});
